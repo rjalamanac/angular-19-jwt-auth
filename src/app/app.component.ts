@@ -3,10 +3,11 @@ import { Subscription } from 'rxjs';
 import { StorageService } from './_services/storage.service';
 import { AuthService } from './_services/auth.service';
 import { EventBusService } from './_shared/event-bus.service';
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  imports: [RouterModule],
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
@@ -22,7 +23,7 @@ export class AppComponent {
     private storageService: StorageService,
     private authService: AuthService,
     private eventBusService: EventBusService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.isLoggedIn = this.storageService.isLoggedIn();

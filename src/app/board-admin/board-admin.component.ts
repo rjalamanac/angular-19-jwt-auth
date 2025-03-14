@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../_services/user.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-board-admin',
   templateUrl: './board-admin.component.html',
-  styleUrls: ['./board-admin.component.css']
+  styleUrls: ['./board-admin.component.css'],
+  standalone: true,
+  imports: [FormsModule]
 })
 export class BoardAdminComponent implements OnInit {
   content?: string;
